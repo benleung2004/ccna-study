@@ -1,0 +1,55 @@
+:root {
+  --bg: #f6f7f9; --card: #ffffff; --text: #1c2430; --muted: #5d6878; --line: #dde2e9;
+  --accent: #1259c3; --accent-text: #ffffff; --good: #177245; --good-bg: #e4f5ec; --bad: #b3261e; --bad-bg: #fbe9e7; --warn-bg: #fff4d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12161c; --card: #1c222b; --text: #e8ecf2; --muted: #a0abba; --line: #333c49;
+    --accent: #6ea3f5; --accent-text: #0d1420; --good: #6fd6a0; --good-bg: #173427; --bad: #ff9d94; --bad-bg: #3d1f1c; --warn-bg: #3a3218;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "PingFang HK", "Microsoft JhengHei", sans-serif; }
+a { color: var(--accent); }
+header { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; padding: 10px 16px; background: var(--card); border-bottom: 1px solid var(--line); }
+.brand { font-weight: 700; color: var(--text); text-decoration: none; }
+nav { display: flex; gap: 2px; overflow-x: auto; max-width: 100%; }
+nav a { padding: 4px 9px; border-radius: 6px; color: var(--muted); text-decoration: none; white-space: nowrap; }
+nav a.on { background: var(--accent); color: var(--accent-text); }
+main { max-width: 760px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 1.35rem; line-height: 1.35; margin: 4px 0 12px; }
+h2 { font-size: 1.05rem; margin: 18px 0 8px; }
+.card { overflow-wrap: anywhere; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-bottom: 12px; }
+.muted { color: var(--muted); font-size: .9rem; }
+.bar { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; margin: 6px 0; }
+.bar i { display: block; height: 100%; background: var(--accent); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.stat { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px; text-align: center; margin-bottom: 12px; }
+.stat b { display: block; font-size: 1.4rem; }
+button, .btn { display: inline-block; min-height: 40px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); font: inherit; cursor: pointer; text-decoration: none; }
+.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.link { min-height: 0; padding: 0; border: 0; background: none; color: var(--muted); font-size: .85rem; text-decoration: underline; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+input[type=text], input[type=number] { font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; width: 100%; }
+input[type=number] { width: 90px; }
+.opt { display: block; width: 100%; text-align: left; margin-top: 8px; }
+.opt.right, .result.right { background: var(--good-bg); border-color: var(--good); }
+.opt.wrong, .result.wrong { background: var(--bad-bg); border-color: var(--bad); }
+.result { border: 1px solid; border-radius: 8px; padding: 10px; margin-top: 10px; }
+.item { display: flex; gap: 10px; align-items: center; padding: 7px 0; border-top: 1px solid var(--line); }
+.item:first-of-type { border-top: 0; }
+.item input { width: 20px; height: 20px; flex: none; }
+.item a { flex: 1; color: var(--text); text-decoration: none; overflow-wrap: anywhere; }
+.item.done a { color: var(--muted); }
+.tag { flex: none; font-size: .75rem; color: var(--muted); }
+.notice { background: var(--warn-bg); border-radius: 8px; padding: 10px 12px; margin-bottom: 12px; }
+code, pre { font-family: ui-monospace, Menlo, monospace; font-size: .9rem; }
+pre { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px; overflow-x: auto; margin: 6px 0; }
+ul, ol { margin: 6px 0; padding-left: 22px; }
+textarea { width: 100%; height: 160px; font: .85rem ui-monospace, Menlo, monospace; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px; }
+details summary { cursor: pointer; font-weight: 600; }
+.lv { display: inline-block; font-size: .75rem; padding: 1px 7px; border-radius: 10px; background: var(--bg); border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.lv.hard { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+.exp h3 { font-size: .95rem; margin: 14px 0 4px; }
+.exp p { margin: 4px 0; white-space: pre-line; }
+.timer { font: 700 1.4rem ui-monospace, Menlo, monospace; }
